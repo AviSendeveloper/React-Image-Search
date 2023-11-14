@@ -1,7 +1,14 @@
-const ImageList = () => {
-    return <div>
-        <h1>ImageList</h1>
-    </div>
-}
+import ImageShow from "./ImageShow";
+import "./ImageList.css";
+
+const ImageList = ({ images }) => {
+    return (
+        <div className="image-list">
+            {images.map((image) => {
+                return <ImageShow key={image.id} image={image.url} />;
+            })}
+        </div>
+    );
+};
 
 export default ImageList;
